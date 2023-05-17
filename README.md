@@ -1,3 +1,3 @@
 # react-app-2
 
-https://github.com/wilgakuba/react-app-2
+https://react-app-2--wkuba.repl.co
