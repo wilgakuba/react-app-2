@@ -3,6 +3,8 @@ import { useState } from "react";
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { useForm } from "react-hook-form";
+import { getAllCategories } from "../../redux/categoriesRedux";
+import { useSelector } from "react-redux";
 
 const PostForm = ({ action, actionText, ...props }) => {
 
@@ -15,12 +17,14 @@ const PostForm = ({ action, actionText, ...props }) => {
   const [content, setContent] = useState(props.content || '');
   const [dateError, setDateError] = useState(false);
   const [contentError, setContentError] = useState(false);
+  const [category, setCategory] = useState(props.category || '');
+  const categories = useSelector(getAllCategories);
 
   const handleSubmit = () => {
     setContentError(!content)
     setDateError(!publishedDate)
     if(content && publishedDate) {
-      action({ title, author, publishedDate, shortDescription, content });
+      action({ title, author, publishedDate, shortDescription, content, category });
    }
   };
 
@@ -45,6 +49,15 @@ const PostForm = ({ action, actionText, ...props }) => {
         <Form.Group className="mb-4">
           <Form.Label>Published date</Form.Label>
           <Form.Control value={publishedDate} onChange={e => setPublishedDate(e.target.value)} />
+        </Form.Group>
+        <Form.Group className="mb-4">
+          <Form.Label>Category</Form.Label>
+          <Form.Select value={category} onChange={e => setCategory(e.target.value)} >
+            <option>Select category...</option>
+            <option>{categories[0]}</option>
+            <option>{categories[1]}</option>
+            <option>{categories[2]}</option>
+          </Form.Select>
         </Form.Group>
         <Form.Group className="mb-4">
           <Form.Label>Short description</Form.Label>

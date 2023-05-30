@@ -6,7 +6,8 @@ const initialState = {
           shortDescription: 'Short description of the article...',
           content: 'Main content of the article',
           publishedDate: '02-02-2022',
-          author: 'John Doe'
+          author: 'John Doe',
+          category: 'Movies'
         },
         {
           id: '2',
@@ -14,7 +15,8 @@ const initialState = {
           shortDescription: 'Short description of the article...',
           content: 'Main content of the article',
           publishedDate: '02-03-2022',
-          author: 'Martin Smith'
+          author: 'Martin Smith',
+          category: 'News'
         },
         {
           id: '3',
@@ -22,7 +24,8 @@ const initialState = {
           shortDescription: 'Short description of the article...',
           content: 'Main content of the article',
           publishedDate: '02-04-2022',
-          author: 'Samantha Fox'
+          author: 'Samantha Fox',
+          category: 'Sport'
         },
         {
           id: '4',
@@ -30,8 +33,15 @@ const initialState = {
           shortDescription: 'Short description of the article...',
           content: 'Main content of the article',
           publishedDate: '02-05-2022',
-          author: 'Rob Roy'
+          author: 'Rob Roy',
+          category: 'Sport'
         }
+    ],
+
+    categories: [
+      'Sport',
+      'News',
+      'Movies'
     ]
   };
   
